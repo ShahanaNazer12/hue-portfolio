@@ -1,0 +1,11 @@
+{
+  "name": "hue-portfolio-task",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"dev": "next dev", "build": "next build", "start": "next start", "lint": "next lint"},
+  "dependencies": {
+    "bcryptjs": "^2.4.3", "cloudinary": "^2.5.1", "jose": "^5.9.6", "mongodb": "^6.10.0",
+    "next": "^14.2.21", "react": "^18.3.1", "react-dom": "^18.3.1", "resend": "^4.0.1"
+  },
+  "devDependencies": {"eslint": "^8.57.1", "eslint-config-next": "^14.2.21"}
+}

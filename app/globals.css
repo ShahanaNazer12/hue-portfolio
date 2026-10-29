@@ -1,0 +1,1000 @@
+
+/* ========================================
+   1. Google Fonts
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* ========================================
+   2. Global Styles
+======================================== */
+:root {
+  --ink: #17251f;
+  --muted: #69766f;
+  --paper: #f7f8f4;
+  --green: #c7f36b;
+  --line: #e1e7df;
+  --white: #fff;
+  --dark: #14221c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* ========================================
+   3. Header & Navigation
+======================================== */
+.site-header {
+  height: 78px;
+  padding: 0 max(5vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 248, 244, 0.93);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-family: Manrope, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.brand span,
+.hero h1 span,
+.section-heading h2 span,
+.dashboard-inner h1 span {
+  color: #739e37;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  color: #536058;
+}
+
+.site-header nav a:hover,
+.contact-details a:hover {
+  color: #739e37;
+}
+
+.site-header .nav-cta {
+  background: var(--dark);
+  color: white;
+  padding: 12px 17px;
+  border-radius: 999px;
+}
+
+
+/* ========================================
+   4. Shared Sections
+======================================== */
+.section {
+  padding: 100px max(7vw, 24px);
+  scroll-margin-top: 76px;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #71806f;
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  max-width: 700px;
+}
+
+.section-heading h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.section-heading > p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.section-heading h2,
+.hero h1,
+.dashboard-inner > h1 {
+  font-family: Manrope, sans-serif;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+
+/* ========================================
+   5. Hero Section
+======================================== */
+.hero {
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+  background: radial-gradient(
+    circle at 80% 30%,
+    #e7f3d4 0,
+    transparent 34%
+  );
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #71806f;
+}
+
+.hero h1 {
+  font-size: clamp(56px, 8vw, 94px);
+  line-height: 1.03;
+  margin: 12px 0;
+}
+
+.hero h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 20px 0 12px;
+}
+
+.lead {
+  max-width: 530px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+
+/* ========================================
+   6. Buttons
+======================================== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 21px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+.primary {
+  background: var(--green);
+  color: var(--dark);
+}
+
+.secondary {
+  border: 1px solid #d3dcd1;
+  background: transparent;
+  color: var(--ink);
+}
+
+
+/* ========================================
+   7. Hero Photo & Floating Card
+======================================== */
+.hero-visual {
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.portrait-placeholder {
+  width: min(310px, 80%);
+  aspect-ratio: 4 / 5;
+  border-radius: 160px 160px 26px 26px;
+  background: linear-gradient(145deg, #dce9c7, #a6bd8e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #466239;
+  box-shadow: 0 25px 70px #29412b18;
+}
+
+.portrait-placeholder span {
+  font: 800 90px Manrope;
+  letter-spacing: -8px;
+}
+
+.portrait-placeholder small {
+  font-size: 12px;
+}
+
+/* Profile image */
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.floating-card {
+  position: absolute;
+  right: -2%;
+  bottom: 48px;
+  padding: 18px 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 15px 40px #1d302010;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.floating-card strong {
+  font-size: 14px;
+}
+
+
+/* ========================================
+   8. About & Skills
+======================================== */
+.about,
+.projects {
+  background: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 44px;
+}
+
+.about-card {
+  border: 1px solid var(--line);
+  padding: 30px;
+  border-radius: 20px;
+  background: #fbfcf9;
+}
+
+.about-card h3,
+.form-card h3 {
+  font: 700 20px Manrope;
+  margin: 0 0 17px;
+}
+
+.about-card p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.skill-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skill-list span {
+  background: #eef3e8;
+  border: 1px solid #e2ead8;
+  padding: 10px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   9. Projects Grid
+======================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.project-card {
+  text-align: left;
+  border: 1px solid var(--line);
+  padding: 0;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px #152a1810;
+}
+
+.project-image-wrap {
+  height: 220px;
+  position: relative;
+  background: #edf0e9;
+  overflow: hidden;
+}
+
+.project-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-open {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: white;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font: 700 18px Manrope;
+  margin: 0 0 8px;
+}
+
+.project-info p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.empty-projects {
+  margin-top: 38px;
+  padding: 60px 20px;
+  border: 1px dashed #ccd6c7;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.empty-projects > span {
+  font-size: 28px;
+}
+
+.empty-projects h3 {
+  font: 700 20px Manrope;
+}
+
+.empty-projects p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* ========================================
+   10. Contact Section
+======================================== */
+.contact {
+  background: #f1f4ed;
+}
+
+.contact-grid,
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-details {
+  display: grid;
+  gap: 17px;
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   11. Forms
+======================================== */
+.form-card {
+  display: grid;
+  gap: 17px;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px #14221c08;
+}
+
+.form-card label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #445248;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  border: 1px solid #dce3d9;
+  border-radius: 10px;
+  padding: 13px 14px;
+  background: #fcfdfa;
+  color: var(--ink);
+  outline: none;
+  font-size: 14px;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #91b35f;
+  box-shadow: 0 0 0 3px #c7f36b33;
+}
+
+.form-card textarea {
+  resize: vertical;
+}
+
+.status {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.success {
+  color: #2b713c;
+}
+
+.error {
+  color: #b42318;
+}
+
+
+/* ========================================
+   12. Meeting Booking Section
+======================================== */
+.booking {
+  background: #17251f;
+  color: #f7f8f4;
+}
+
+.booking .section-label {
+  color: #c7f36b;
+}
+
+.booking .section-heading h2 span {
+  color: #c7f36b;
+}
+
+.booking .section-heading > p {
+  color: #c0cbc1;
+}
+
+.booking-note {
+  margin-top: 30px;
+  padding: 18px;
+  border: 1px solid #3c4c40;
+  border-radius: 12px;
+  color: #d6e1d4;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.booking .form-card {
+  color: var(--ink);
+}
+
+
+/* ========================================
+   13. Footer
+======================================== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px max(5vw, 24px);
+  background: #fff;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* ========================================
+   14. Project Details Modal
+======================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #07120dd9;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.project-modal {
+  position: relative;
+  background: white;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 20px;
+}
+
+.project-modal > img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+  background: #edf0e9;
+}
+
+.modal-content {
+  padding: 28px;
+}
+
+.modal-content h2 {
+  font: 800 30px Manrope;
+  margin: 10px 0;
+}
+
+.modal-content > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: white;
+  font-size: 28px;
+  z-index: 1;
+}
+
+
+/* ========================================
+   15. Admin Login
+======================================== */
+.admin-auth {
+  min-height: 100vh;
+  padding: 35px max(5vw, 24px);
+  background: radial-gradient(
+    circle at 75% 20%,
+    #e5f1d5,
+    transparent 35%
+  );
+}
+
+.auth-card {
+  max-width: 450px;
+  margin: 9vh auto;
+}
+
+.auth-card h1 {
+  font: 800 36px Manrope;
+  margin: 0;
+}
+
+.auth-card > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.back-link {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+/* ========================================
+   16. Admin Dashboard
+======================================== */
+.dashboard {
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  height: 75px;
+  padding: 0 max(5vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: white;
+}
+
+.dashboard-header > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.small-button {
+  padding: 10px 16px;
+}
+
+.dashboard-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 55px 24px 90px;
+}
+
+.dashboard-inner > h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  margin: 0 0 10px;
+}
+
+.dashboard-sub {
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.project-editor h2,
+.management-heading h2 {
+  font: 700 22px Manrope;
+  margin: 0 0 8px;
+}
+
+.project-editor label small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.helper-text {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.editor-preview {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.management-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.management-heading span {
+  font-size: 12px;
+  color: var(--muted);
+  background: #eaf0e5;
+  padding: 7px 10px;
+  border-radius: 99px;
+}
+
+.admin-project {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  margin-bottom: 13px;
+}
+
+.admin-project > img {
+  width: 115px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #edf0e9;
+}
+
+.admin-project-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-project-copy h3 {
+  font: 700 16px Manrope;
+  margin: 2px 0 7px;
+}
+
+.admin-project-copy p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.admin-actions button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 700;
+  font-size: 12px;
+  color: #466e2d;
+}
+
+.admin-actions .delete-action {
+  color: #b42318;
+}
+
+.empty-admin {
+  border: 1px dashed #ccd6c7;
+  border-radius: 15px;
+  padding: 35px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* ========================================
+   17. Tablet Responsive Styles
+======================================== */
+@media (max-width: 900px) {
+  .section {
+    padding: 78px 6vw;
+  }
+
+  .hero {
+    gap: 25px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid,
+  .booking-grid {
+    gap: 28px;
+  }
+
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .project-editor {
+    max-width: none;
+  }
+}
+
+
+/* ========================================
+   18. Mobile Responsive Styles
+======================================== */
+@media (max-width: 620px) {
+  .site-header {
+    height: auto;
+    min-height: 70px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    gap: 15px;
+  }
+
+  .site-header nav {
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    max-width: 78%;
+  }
+
+  .site-header nav .nav-cta {
+    padding: 8px 11px;
+  }
+
+  .brand {
+    font-size: 25px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 65px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .hero-visual {
+    min-height: 310px;
+    grid-row: 1;
+  }
+
+  .portrait-placeholder {
+    width: 220px;
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .portrait-placeholder span {
+    font-size: 70px;
+  }
+
+  .floating-card {
+    right: 5%;
+    bottom: 18px;
+  }
+
+  .hero-copy {
+    grid-row: 2;
+  }
+
+  .hero-meta {
+    gap: 12px;
+  }
+
+  .section {
+    padding: 65px 22px;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -2px;
+  }
+
+  .about-grid,
+  .contact-grid,
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    gap: 14px;
+  }
+
+  .about-card,
+  .form-card {
+    padding: 23px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-wrap {
+    height: 230px;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer p {
+    width: 100%;
+    order: 3;
+  }
+
+  .dashboard-inner {
+    padding: 38px 18px 60px;
+  }
+
+  .dashboard-header {
+    padding: 0 18px;
+  }
+
+  .dashboard-header > div {
+    gap: 10px;
+  }
+
+  .admin-project {
+    gap: 11px;
+    padding: 11px;
+  }
+
+  .admin-project > img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .auth-card {
+    margin-top: 7vh;
+  }
+}
